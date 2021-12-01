@@ -32,21 +32,21 @@ public class Controller {
         return new ResponseEntity<>(ordersServices.getAllOrders(), HttpStatus.OK);
     }
 
-    @Bean
-    public Function<UserEntity, PaymentReport> uppercase() {
-        return (input) -> {
-            PaymentReport paymentReport = PaymentReport.builder()
-                    .uuid(UUID.randomUUID())
-                    .userEntity(input)
-                    .dateTime(LocalDateTime.now())
-                    .status("success")
-                    .build();
-            return paymentReport;
-        };
-    }
+//    @Bean(name = "uppercase")
+//    public Function<UserEntity, PaymentReport> uppercase() {
+//        return (input) -> {
+//            PaymentReport paymentReport = PaymentReport.builder()
+//                    .uuid(UUID.randomUUID())
+//                    .userEntity(input)
+//                    .dateTime(LocalDateTime.now())
+//                    .status("success")
+//                    .build();
+//            return paymentReport;
+//        };
+//    }
 
-    @Bean
-    public Function<OrdersEntity, List<OrdersEntity>> getOrders() {
+    @Bean()
+    public Function<String,List<OrdersEntity>> getOrders() {
         return (input) -> {
             List<OrdersEntity> ordersEntities = ordersServices.getAllOrders();
             return ordersEntities;
