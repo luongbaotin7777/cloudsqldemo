@@ -19,7 +19,7 @@ import java.util.UUID;
 import java.util.function.Function;
 
 @RestController
-@RequestMapping(value = "/hello")
+@RequestMapping(value = "/get")
 public class Controller {
     private IOrdersServices ordersServices;
 
@@ -27,7 +27,7 @@ public class Controller {
         this.ordersServices = ordersServices;
     }
 
-    @GetMapping("/world")
+    @GetMapping("/orders")
     public ResponseEntity helloWorld() {
         return new ResponseEntity<>(ordersServices.getAllOrders(), HttpStatus.OK);
     }
@@ -45,11 +45,11 @@ public class Controller {
 //        };
 //    }
 
-    @Bean()
-    public Function<String,List<OrdersEntity>> getOrders() {
-        return (input) -> {
-            List<OrdersEntity> ordersEntities = ordersServices.getAllOrders();
-            return ordersEntities;
-        };
-    }
+//    @Bean()
+//    public Function<String,List<OrdersEntity>> getOrders() {
+//        return (input) -> {
+//            List<OrdersEntity> ordersEntities = ordersServices.getAllOrders();
+//            return ordersEntities;
+//        };
+//    }
 }
