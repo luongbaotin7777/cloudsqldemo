@@ -1,4 +1,4 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
-ARG JAR_FILE=target/demo-0.0.1-SNAPSHOT.jar
-COPY ${JAR_FILE} democloud.jar
-ENTRYPOINT ["java","-jar","democloud.jar"]
+ADD target/demo-0.0.1-SNAPSHOT.jar demo.jar
+EXPOSE 8080
+ENTRYPOINT exec java -jar demo.jar
