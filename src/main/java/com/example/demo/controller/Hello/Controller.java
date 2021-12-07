@@ -32,7 +32,6 @@ public class Controller {
         return new ResponseEntity<>(ordersServices.getAllOrders(), HttpStatus.OK);
     }
 
-
     @Bean()
     public Function<String,List<OrdersEntity>> getOrders() {
         return (input) -> {
