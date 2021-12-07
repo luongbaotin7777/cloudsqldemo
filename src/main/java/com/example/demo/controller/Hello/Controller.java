@@ -32,18 +32,6 @@ public class Controller {
         return new ResponseEntity<>(ordersServices.getAllOrders(), HttpStatus.OK);
     }
 
-//    @Bean(name = "uppercase")
-//    public Function<UserEntity, PaymentReport> uppercase() {
-//        return (input) -> {
-//            PaymentReport paymentReport = PaymentReport.builder()
-//                    .uuid(UUID.randomUUID())
-//                    .userEntity(input)
-//                    .dateTime(LocalDateTime.now())
-//                    .status("success")
-//                    .build();
-//            return paymentReport;
-//        };
-//    }
 
     @Bean()
     public Function<String,List<OrdersEntity>> getOrders() {
