@@ -23,6 +23,9 @@ public class OrderItemsEntity {
     @Column(name = "quantity", columnDefinition = "integer default 1")
     private int quantity;
 
+    @Column(name = "create_at")
+    private Date create_at;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
     @EqualsAndHashCode.Exclude

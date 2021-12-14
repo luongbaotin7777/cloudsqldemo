@@ -20,8 +20,8 @@ public class OrdersEntity {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "creation_timestamp")
-    private Date creation_timestamp;
+    @Column(name = "create_at")
+    private Date create_at;
 
 
     @OneToMany(mappedBy = "ordersEntity")
