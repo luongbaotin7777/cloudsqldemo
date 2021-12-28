@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/get")
+@RequestMapping(value = "/gcp")
 public class Controller {
     private IOrdersServices ordersServices;
 
@@ -20,6 +20,5 @@ public class Controller {
     public ResponseEntity helloWorld() {
         return new ResponseEntity<>(ordersServices.getAllOrders(), HttpStatus.OK);
     }
-
 
 }
